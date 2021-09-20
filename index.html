@@ -85,6 +85,7 @@ loadJSON(function(response) {
     
     for (var i = 0; i < jsonresponse.photos.length; i++) {
         var divCard = document.createElement("div");
+            divCard.className="card";
             var imgCard= document.createElement("img");
             imgCard.className="card-img-top";
             imgCard.src="photos/"+jsonresponse.photos[i].photoName;
@@ -106,8 +107,6 @@ loadJSON(function(response) {
                 divCardText.appendChild(pFechaCard);
         var elementPhotos = document.getElementById("photoSection");
         elementPhotos.appendChild(divCard);
-        var hrSpace = document.createElement("hr");
-        elementPhotos.appendChild(hrSpace);
     }
 },'photosWeb.json');
 
