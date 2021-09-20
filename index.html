@@ -70,7 +70,7 @@ a {
 }
 
 .nav-link:hover{
-    color: #482ff7;
+    color: indianred;
 }
 
 .nav-logo {
@@ -78,7 +78,7 @@ a {
     font-weight: 500;
     color: indianred;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -86,16 +86,16 @@ a {
         flex-direction: column;
         background-color: #fff;
         width: 100%;
-        border-radius: 10px;
+        border-radius: 0px;
         text-align: center;
-        transition: 0.3s;
         box-shadow:
             0 10px 27px rgba(0, 0, 0, 0.05);
-        z-index:100;
+        
     }
 
     .nav-menu.active {
         left: 0;
+        position: unset;
     }
 
     .nav-item {
@@ -106,8 +106,7 @@ a {
         display: block;
         cursor: pointer;
     }
-    // Inside the Media Query.
-
+   
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -144,25 +143,29 @@ a {
 <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">YyJ♥</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Mensaje del día Amorcito</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Recuerdos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Horoscopo para bebe</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Mensaje bebe</a>
-                </li>
-            </ul>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mensaje del día Amorcito</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Recuerdos</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Horoscopo para bebe</a>
+                </li>
+                <hr>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mensaje de bebe</a>
+                </li>
+            </ul>
+            
         </nav>
 </header>
 <body>
