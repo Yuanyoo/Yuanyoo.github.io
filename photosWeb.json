@@ -1,0 +1,14 @@
+{
+    "photos":[
+        {
+            "photoName":"anillos.png",
+            "photoText":"Juntitos recorriendo una de las tantas lagunas del mundo que visitaremos.",
+            "photoDate":"5 de agosto"
+        },
+        {
+            "photoName":"paseo monumental.png",
+            "photoText":"Nuestra pequeña pero mágica escapada.",
+            "photoDate":"30 de agosto"
+        }
+    ]
+}
