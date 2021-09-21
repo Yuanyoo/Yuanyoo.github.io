@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Mensaje del día</title>
+<title>Recuerdos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css">
@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="webBebe.css">
-
 <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">YyJ♥</a>
@@ -39,31 +38,18 @@
         </nav>
 </header>
 <body>
-
-<div class="w3-container w3-theme-d4" id="mensajePrincipal" style="background-color:indianred !important;text-align:center;padding-top:10px">
-</div>
-<div id="imgSpace">
+<p class="w3-large" style="text-align:center;padding-top:10px"> SECCIÓN DE RECUERDOS</p>
+<div class="container pa0 flex justify-center">
+    <div class="card-columns" id="photoSection" style="width:80%:align-">
+        
+        
+    </div>
 </div>
 <a href="https://api.whatsapp.com/send?phone=51970870599" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 </body>
 <script>
-
-function showHideImage(element){
-	console.log("clicked img "+element.id);
-	switch(element.id){
-		case 'imgColor':
-			document.getElementById('imgColor').style.display="none";
-			document.getElementById('imgNoColor').style.display="unset";
-		break;
-		case 'imgNoColor':
-			document.getElementById('imgNoColor').style.display="none";
-			document.getElementById('imgColor').style.display="unset";
-		break;
-	}
-}
-
 function loadJSON(callback,jsonName) {
 
     var xobj = new XMLHttpRequest();
@@ -80,36 +66,40 @@ function loadJSON(callback,jsonName) {
     xobj.send(null);
 
 }
-
-// Preparing Mensaje
+// Preparing Photos
 loadJSON(function(response) {
     // Do Something with the response e.g.
     jsonresponse = JSON.parse(response);
 
     // Assuming json data is wrapped in square brackets as Drew suggests
-    var title=jsonresponse.messageTodayTitle;
-    var body=jsonresponse.messageTodayBody;
-    var namePhoto=jsonresponse.messageTodayPhoto;
-    var tagTitle = document.createElement("p");
-    tagTitle.className="w3-large";
-    var textTitle = document.createTextNode(title);
-    tagTitle.appendChild(textTitle);
-    var element = document.getElementById("mensajePrincipal");
-    element.appendChild(tagTitle);
     
-    var tagBody = document.createElement("p");
-    tagBody.className="w3-large";
-    var textBody = document.createTextNode(body);
-    tagBody.appendChild(textBody);
-    var element = document.getElementById("mensajePrincipal");
-    element.appendChild(tagBody);
-    var element2 = document.getElementById("imgSpace");
-    var imgMessage= document.createElement("img");
-    imgMessage.src="photos/"+namePhoto;
-    imgMessage.style.width="100%";
-    element2.appendChild(imgMessage);
+    for (var i = 0; i < jsonresponse.photos.length; i++) {
+        var divCard = document.createElement("div");
+            divCard.className="card";
+            var imgCard= document.createElement("img");
+            imgCard.className="card-img-top";
+            imgCard.src="photos/"+jsonresponse.photos[i].photoName;
+            imgCard.alt="Card image cap";
+            divCard.appendChild(imgCard);
+            var divCardText= document.createElement("div");
+            divCardText.className="card-body";
+            divCard.appendChild(divCardText);
+                var pDescripcionCard=document.createElement("p");
+                pDescripcionCard.className="card-text";
+                pDescripcionCard.innerHTML=jsonresponse.photos[i].photoText;
+                divCardText.appendChild(pDescripcionCard);
+                var pFechaCard=document.createElement("p");
+                pFechaCard.className="card-text";
+                    var smallElement=document.createElement("small");
+                    smallElement.className="text-muted";
+                    smallElement.innerHTML=jsonresponse.photos[i].photoDate;
+                    pFechaCard.appendChild(smallElement);
+                divCardText.appendChild(pFechaCard);
+        var elementPhotos = document.getElementById("photoSection");
+        elementPhotos.appendChild(divCard);
+    }
+},'photosWeb.json');
 
-},'messagesBebe.json');
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
