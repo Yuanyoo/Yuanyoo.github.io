@@ -22,15 +22,15 @@
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Mensaje del día Amorcito</a>
                 </li>
-                <hr>
+                
                 <li class="nav-item">
                     <a href="recuerdos.html" class="nav-link">Recuerdos</a>
                 </li>
-                <hr>
+                
                 <li class="nav-item">
                     <a href="#" class="nav-link">Horoscopo para bebe</a>
                 </li>
-                <hr>
+                
                 <li class="nav-item">
                     <a href="#" class="nav-link">Mensaje de bebe</a>
                 </li>
@@ -39,11 +39,15 @@
         </nav>
 </header>
 <body>
+<p class="w3-large" style="text-align:center;padding-top:10px"> MENSAJE DEL DÍA</p>
+<div class="card mb-3" style="margin:2%">
+  <img class="card-img-top" src="" style="height: 500px;object-fit: cover;" id="imgCardMensaje1" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" id="cardTitle">Card title</h5>
+    <h3 class="card-text" id="cardMessage">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h3>
+  </div>
+</div>
 
-<div class="w3-container w3-theme-d4" id="mensajePrincipal" style="background-color:indianred !important;text-align:center;padding-top:10px">
-</div>
-<div id="imgSpace">
-</div>
 <a href="https://api.whatsapp.com/send?phone=51970870599" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
@@ -90,24 +94,14 @@ loadJSON(function(response) {
     var title=jsonresponse.messageTodayTitle;
     var body=jsonresponse.messageTodayBody;
     var namePhoto=jsonresponse.messageTodayPhoto;
-    var tagTitle = document.createElement("p");
-    tagTitle.className="w3-large";
-    var textTitle = document.createTextNode(title);
-    tagTitle.appendChild(textTitle);
-    var element = document.getElementById("mensajePrincipal");
-    element.appendChild(tagTitle);
     
-    var tagBody = document.createElement("p");
-    tagBody.className="w3-large";
-    var textBody = document.createTextNode(body);
-    tagBody.appendChild(textBody);
-    var element = document.getElementById("mensajePrincipal");
-    element.appendChild(tagBody);
-    var element2 = document.getElementById("imgSpace");
-    var imgMessage= document.createElement("img");
+    var imgMessage = document.getElementById("imgCardMensaje1");
     imgMessage.src="photos/"+namePhoto;
-    imgMessage.style.width="100%";
-    element2.appendChild(imgMessage);
+    
+    var bodyMessage = document.getElementById("cardMessage");
+    bodyMessage.innerHTML=body;
+    var titleMessage = document.getElementById("cardTitle");
+    titleMessage.innerHTML=title;
 
 },'messagesBebe.json');
 const hamburger = document.querySelector(".hamburger");
