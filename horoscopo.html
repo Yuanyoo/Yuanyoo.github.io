@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<title>Mensaje del día</title>
+<title>Horoscopo para bebe</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css">
@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="webBebe.css">
-
 <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">YyJ♥</a>
@@ -22,15 +21,15 @@
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Mensaje del día Amorcito</a>
                 </li>
-                
+                <hr>
                 <li class="nav-item">
                     <a href="recuerdos.html" class="nav-link">Recuerdos</a>
                 </li>
-                
+                <hr>
                 <li class="nav-item">
                     <a href="horoscopo.html" class="nav-link">Horoscopo para bebe</a>
                 </li>
-                
+                <hr>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Mensaje de bebe</a>
                 </li>
@@ -39,38 +38,35 @@
         </nav>
 </header>
 <body>
-<p class="w3-large" style="text-align:center;padding-top:10px"> MENSAJE DEL DÍA</p>
-<div class="card mb-3" style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;">
-  <div class="video-responsive">
-    <iframe width="560" height="315" id="youtubeMessage" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-  <img class="card-img-top" src="" style="" id="imgCardMensaje1" alt="Card image cap">
+<p class="w3-large" style="text-align:center;padding-top:10px"> HOROSCOPO PARA BEBE</p>
+
+<div class="card" style="width: 95%;margin:2%">
   <div class="card-body">
-    <h5 class="card-title" id="cardTitle"></h5>
-    <h3 class="card-text" id="cardMessage"></h3>
+    <h5 class="h3">Salud</h5>
+    <p class="w3-large" id="saludHoroscopo"></p>
   </div>
 </div>
 
+<div class="card" style="width: 95%;margin:2%">
+  <div class="card-body">
+    <h5 class="h3">Dinero</h5>
+    <p class="w3-large" id="dineroHoroscopo"></p>
+  </div>
+</div>
+
+
+
+<div class="card" style="width: 95%;margin:2%">
+  <div class="card-body">
+    <h5 class="h3">Amor</h5>
+    <p class="w3-large" id="amorHoroscopo"></p>
+  </div>
+</div>
 <a href="https://api.whatsapp.com/send?phone=51970870599" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
 </body>
 <script>
-
-function showHideImage(element){
-	console.log("clicked img "+element.id);
-	switch(element.id){
-		case 'imgColor':
-			document.getElementById('imgColor').style.display="none";
-			document.getElementById('imgNoColor').style.display="unset";
-		break;
-		case 'imgNoColor':
-			document.getElementById('imgNoColor').style.display="none";
-			document.getElementById('imgColor').style.display="unset";
-		break;
-	}
-}
-
 function loadJSON(callback,jsonName) {
 
     var xobj = new XMLHttpRequest();
@@ -87,38 +83,16 @@ function loadJSON(callback,jsonName) {
     xobj.send(null);
 
 }
-
-// Preparing Mensaje
+// Preparing Photos
 loadJSON(function(response) {
     // Do Something with the response e.g.
     jsonresponse = JSON.parse(response);
+    console.log(jsonresponse.horoscopo.piscis);
+    document.getElementById('dineroHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.dinero;
+    document.getElementById('saludHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.salud;
+    document.getElementById('amorHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.amor;
+},'https://api.adderou.cl/tyaas/');
 
-    // Assuming json data is wrapped in square brackets as Drew suggests
-    var title=jsonresponse.messageTodayTitle;
-    var body=jsonresponse.messageTodayBody;
-    var namePhoto=jsonresponse.messageTodayPhoto;
-    var nameVideo=jsonresponse.messageYoutube;
-    var imgMessage = document.getElementById("imgCardMensaje1");
-    if(namePhoto){
-        imgMessage.src="photos/"+namePhoto;
-        imgMessage.style.width="100%";
-    }else{
-        imgMessage.style.display="none";
-    }
-    
-    var bodyMessage = document.getElementById("cardMessage");
-    bodyMessage.innerHTML=body;
-    var titleMessage = document.getElementById("cardTitle");
-    titleMessage.innerHTML=title;
-    var ytMessage = document.getElementById("youtubeMessage");
-    if(nameVideo){
-        ytMessage.src=nameVideo;
-    }else{
-        ytMessage.style.display="none";
-    }
-    
-    
-},'messagesBebe.json');
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
