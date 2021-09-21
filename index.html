@@ -40,11 +40,11 @@
 </header>
 <body>
 <p class="w3-large" style="text-align:center;padding-top:10px"> MENSAJE DEL DÍA</p>
-<div class="card mb-3" style="margin:1%;padding-bottom:50px">
-  <img class="card-img-top" src="" style="height: 500px;object-fit: cover;" id="imgCardMensaje1" alt="Card image cap">
+<div class="card mb-3" style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;">
+  <img class="card-img-top" src="" style="" id="imgCardMensaje1" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title" id="cardTitle">Card title</h5>
-    <h3 class="card-text" id="cardMessage">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</h3>
+    <h5 class="card-title" id="cardTitle"></h5>
+    <h3 class="card-text" id="cardMessage"></h3>
   </div>
 </div>
 
@@ -97,7 +97,7 @@ loadJSON(function(response) {
     
     var imgMessage = document.getElementById("imgCardMensaje1");
     imgMessage.src="photos/"+namePhoto;
-    
+    imgMessage.style.width="100%";
     var bodyMessage = document.getElementById("cardMessage");
     bodyMessage.innerHTML=body;
     var titleMessage = document.getElementById("cardTitle");
