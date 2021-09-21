@@ -41,6 +41,9 @@
 <body>
 <p class="w3-large" style="text-align:center;padding-top:10px"> MENSAJE DEL DÍA</p>
 <div class="card mb-3" style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;">
+  <div class="video-responsive">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_gU9kX7zBxc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
   <img class="card-img-top" src="" style="" id="imgCardMensaje1" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title" id="cardTitle"></h5>
@@ -94,10 +97,14 @@ loadJSON(function(response) {
     var title=jsonresponse.messageTodayTitle;
     var body=jsonresponse.messageTodayBody;
     var namePhoto=jsonresponse.messageTodayPhoto;
-    
     var imgMessage = document.getElementById("imgCardMensaje1");
-    imgMessage.src="photos/"+namePhoto;
-    imgMessage.style.width="100%";
+    if(namePhoto){
+        imgMessage.src="photos/"+namePhoto;
+        imgMessage.style.width="100%";
+    }else{
+        imgMessage.style.display="none";
+    }
+    
     var bodyMessage = document.getElementById("cardMessage");
     bodyMessage.innerHTML=body;
     var titleMessage = document.getElementById("cardTitle");
