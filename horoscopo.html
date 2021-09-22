@@ -87,7 +87,7 @@ function loadJSON(callback,jsonName) {
 loadJSON(function(response) {
     // Do Something with the response e.g.
     jsonresponse = JSON.parse(response);
-    console.log(jsonresponse.horoscopo.piscis);
+    console.log(jsonresponse);
     document.getElementById('dineroHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.dinero;
     document.getElementById('saludHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.salud;
     document.getElementById('amorHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.amor;
