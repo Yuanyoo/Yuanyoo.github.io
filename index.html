@@ -41,7 +41,7 @@
 <body>
 <p class="w3-large" style="text-align:center;padding-top:10px"> MENSAJE DEL DÍA</p>
 <div class="card mb-3" style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;">
-  <div class="video-responsive">
+  <div class="video-responsive" id="videoDiv">
     <iframe width="560" height="315" id="youtubeMessage" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
   <img class="card-img-top" src="" style="" id="imgCardMensaje1" alt="Card image cap">
@@ -115,6 +115,7 @@ loadJSON(function(response) {
         ytMessage.src=nameVideo;
     }else{
         ytMessage.style.display="none";
+        document.getElementById("videoDiv").style.display="none";
     }
     
     
