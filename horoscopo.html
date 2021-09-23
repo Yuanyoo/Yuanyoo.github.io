@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="webBebe.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <header class="header">
         <nav class="navbar">
             <a href="#" class="nav-logo">YyJ♥</a>
@@ -40,28 +41,25 @@
 <body>
 <p class="w3-large" style="text-align:center;padding-top:10px"> HOROSCOPO PARA BEBE</p>
 
-<div class="card" style="width: 95%;margin:2%">
-  <div class="card-body">
-    <h5 class="h3">Salud</h5>
-    <p class="w3-large" id="saludHoroscopo"></p>
-  </div>
-</div>
-
-<div class="card" style="width: 95%;margin:2%">
-  <div class="card-body">
-    <h5 class="h3">Dinero</h5>
-    <p class="w3-large" id="dineroHoroscopo"></p>
-  </div>
-</div>
-
 
 
 <div class="card" style="width: 95%;margin:2%">
   <div class="card-body">
-    <h5 class="h3">Amor</h5>
-    <p class="w3-large" id="amorHoroscopo"></p>
+    <h5 class="h3"></h5>
+    <p class="w3-large" id="intentoFetchPiscis"></p>
   </div>
 </div>
+<div>
+<p class="w3-large" style="text-align:center;padding-top:10px"> El mio</p>
+
+
+<div class="card" style="width: 95%;margin:2%">
+  <div class="card-body">
+    <h5 class="h3"></h5>
+    <p class="w3-large" id="intentoFetchLeo"></p>
+  </div>
+</div>
+<div>
 <a href="https://api.whatsapp.com/send?phone=51970870599" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
@@ -83,15 +81,6 @@ function loadJSON(callback,jsonName) {
     xobj.send(null);
 
 }
-// Preparing Photos
-loadJSON(function(response) {
-    // Do Something with the response e.g.
-    jsonresponse = JSON.parse(response);
-    console.log(jsonresponse);
-    document.getElementById('dineroHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.dinero;
-    document.getElementById('saludHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.salud;
-    document.getElementById('amorHoroscopo').innerHTML=jsonresponse.horoscopo.piscis.amor;
-},'https://api.adderou.cl/tyaas/');
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -111,6 +100,24 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+$.ajax({
+   url:"https://api.scraperapi.com?api_key=692e564c4dd43797407779e6abcdd09a&url=https://horoscopo.abc.es/signos-zodiaco-piscis/horoscopo-hoy.html",
+   type:'GET',
+   success: function(data){
+       const parser = new DOMParser();
+        const virtualDoc = parser.parseFromString(data, 'text/html');
+        document.getElementById('intentoFetchPiscis').innerHTML=virtualDoc.getElementById('noticia').getElementsByClassName("inside")[0].querySelectorAll('p')[8].innerHTML;
+   }
+});
+$.ajax({
+   url:"https://api.scraperapi.com?api_key=692e564c4dd43797407779e6abcdd09a&url=https://horoscopo.abc.es/signos-zodiaco-leo/horoscopo-hoy.html",
+   type:'GET',
+   success: function(data){
+       const parser = new DOMParser();
+        const virtualDoc = parser.parseFromString(data, 'text/html');
+        document.getElementById('intentoFetchLeo').innerHTML=virtualDoc.getElementById('noticia').getElementsByClassName("inside")[0].querySelectorAll('p')[8].innerHTML;
+   }
+});
 </script>
 
 </html>
