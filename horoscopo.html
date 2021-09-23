@@ -90,6 +90,7 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
 }
+/*
 $.ajax({
    url:"https://api.scraperapi.com?api_key=692e564c4dd43797407779e6abcdd09a&url=https://horoscopo.abc.es/signos-zodiaco-piscis/horoscopo-hoy.html",
    type:'GET',
@@ -98,7 +99,19 @@ $.ajax({
         const virtualDoc = parser.parseFromString(data, 'text/html');
         document.getElementById('intentoFetchPiscis').innerHTML=virtualDoc.getElementById('noticia').getElementsByClassName("inside")[0].querySelectorAll('p')[8].innerHTML;
    }
-});
+});*/
+
+// Preparing Mensaje
+loadJSON(function(response) {
+    // Do Something with the response e.g.
+    jsonresponse = JSON.parse(response);
+
+    // Assuming json data is wrapped in square brackets as Drew suggests
+    var hBody=jsonresponse.horoscopoText;
+    document.getElementById('intentoFetchPiscis').innerHTML=hBody;
+    
+    
+},'horoscopo_aux.json');
 </script>
 
 </html>
