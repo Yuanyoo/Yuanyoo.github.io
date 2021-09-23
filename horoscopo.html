@@ -50,16 +50,6 @@
   </div>
 </div>
 <div>
-<p class="w3-large" style="text-align:center;padding-top:10px"> El mio</p>
-
-
-<div class="card" style="width: 95%;margin:2%">
-  <div class="card-body">
-    <h5 class="h3"></h5>
-    <p class="w3-large" id="intentoFetchLeo"></p>
-  </div>
-</div>
-<div>
 <a href="https://api.whatsapp.com/send?phone=51970870599" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
@@ -107,15 +97,6 @@ $.ajax({
        const parser = new DOMParser();
         const virtualDoc = parser.parseFromString(data, 'text/html');
         document.getElementById('intentoFetchPiscis').innerHTML=virtualDoc.getElementById('noticia').getElementsByClassName("inside")[0].querySelectorAll('p')[8].innerHTML;
-   }
-});
-$.ajax({
-   url:"https://api.scraperapi.com?api_key=692e564c4dd43797407779e6abcdd09a&url=https://horoscopo.abc.es/signos-zodiaco-leo/horoscopo-hoy.html",
-   type:'GET',
-   success: function(data){
-       const parser = new DOMParser();
-        const virtualDoc = parser.parseFromString(data, 'text/html');
-        document.getElementById('intentoFetchLeo').innerHTML=virtualDoc.getElementById('noticia').getElementsByClassName("inside")[0].querySelectorAll('p')[8].innerHTML;
    }
 });
 </script>
