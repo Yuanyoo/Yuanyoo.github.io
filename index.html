@@ -43,8 +43,12 @@
 <div class="card mb-3" style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;">
   <div class="video-responsive" id="videoDiv">
     <iframe width="560" height="315" id="youtubeMessage" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+    </div>
   <img class="card-img-top" src="" style="" id="imgCardMensaje1" alt="Card image cap">
+  <audio controls style="margin-top:25px;padding-left:5px;padding-right:5px;width:100%" id="audioDiv">
+    <source id="audioMess" src="" type="audio/mpeg">
+    
+    </audio>
   <div class="card-body">
     <h5 class="card-title" id="cardTitle"></h5>
     <h3 class="card-text" id="cardMessage"></h3>
@@ -97,6 +101,7 @@ loadJSON(function(response) {
     var title=jsonresponse.messageTodayTitle;
     var body=jsonresponse.messageTodayBody;
     var namePhoto=jsonresponse.messageTodayPhoto;
+    var nameAudio=jsonresponse.messageAudio;
     var nameVideo=jsonresponse.messageYoutube;
     var imgMessage = document.getElementById("imgCardMensaje1");
     if(namePhoto){
@@ -111,12 +116,21 @@ loadJSON(function(response) {
     var titleMessage = document.getElementById("cardTitle");
     titleMessage.innerHTML=title;
     var ytMessage = document.getElementById("youtubeMessage");
+
+    var audiotMessage = document.getElementById("audioMess");
     if(nameVideo){
         ytMessage.src=nameVideo;
     }else{
         ytMessage.style.display="none";
         document.getElementById("videoDiv").style.display="none";
     }
+    if(nameAudio){
+        audiotMessage.src="photos/"+nameAudio;
+    }else{
+        audiotMessage.style.display="none";
+        document.getElementById("audioDiv").style.display="none";
+    }
+    
     
     
 },'messagesBebe.json');
