@@ -150,31 +150,6 @@ loadJSON(function(response) {
         
     }
 
-    // Assuming json data is wrapped in square brackets as Drew suggests
-   
-    var imgMessage = document.getElementById("imgCardMensaje1");
-    if(namePhoto){
-        imgMessage.src="photos/"+namePhoto;
-        imgMessage.style.width="100%";
-    }else{
-        imgMessage.style.display="none";
-    }
-    
-    var bodyMessage = document.getElementById("cardMessage");
-    bodyMessage.innerHTML=body;
-    var titleMessage = document.getElementById("cardTitle");
-    titleMessage.innerHTML=title;
-    var ytMessage = document.getElementById("youtubeMessage");
-
-    var audiotMessage = document.getElementById("audioMess");
-    
-    
-    if(nameAudio){
-        //audiotMessage.src="photos/"+nameAudio;
-    }else{
-        audiotMessage.style.display="none";
-        document.getElementById("audioDiv").style.display="none";
-    }
     
     
     
