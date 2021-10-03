@@ -40,20 +40,9 @@
 </header>
 <body>
 <p class="w3-large" style="text-align:center;padding-top:10px"> MENSAJE DEL DÍA</p>
-<div class="card mb-3" style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;">
-  <div class="video-responsive" id="videoDiv">
-    <iframe width="560" height="315" id="youtubeMessage" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  <img class="card-img-top" src="" style="" id="imgCardMensaje1" alt="Card image cap">
-  <audio controls style="margin-top:25px;padding-left:5px;padding-right:5px;width:100%" id="audioDiv">
-    <source id="audioMess" src="photos/audioParaBebe.mp3" type="audio/mpeg">
-    
-    </audio>
-  <div class="card-body">
-    <h5 class="card-title" id="cardTitle"></h5>
-    <h3 class="card-text" id="cardMessage"></h3>
-  </div>
-</div>
+<div id="spaceMessages">
+<div>
+
 
 <a href="https://api.whatsapp.com/send?phone=51970870599" class="float" target="_blank">
 <i class="fa fa-whatsapp my-float"></i>
@@ -96,13 +85,73 @@ function loadJSON(callback,jsonName) {
 loadJSON(function(response) {
     // Do Something with the response e.g.
     jsonresponse = JSON.parse(response);
+    for (var i = 0; i < jsonresponse.Messages.length; i++) {
+         var title=jsonresponse.Messages[i].MessageDate;
+        var body=jsonresponse.Messages[i].MessageText;
+        var namePhoto=jsonresponse.Messages[i].MessagePhoto;
+        var nameAudio=jsonresponse.Messages[i].MessageAudio;
+        var nameVideo=jsonresponse.Messages[i].MessageYoutube;
+        var divCard = document.createElement("div");
+            divCard.className="card mb-3";
+            divCard.style="margin-left:10%;margin-right:10%;padding-bottom:50px;width:80%;";
+            var divVideo= document.createElement("div");
+            divVideo.className="video-responsive";
+                var iframeVideo = document.createElement("iframe");
+                iframeVideo.width="560";
+                iframeVideo.height="315";
+                iframeVideo.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframeVideo.frameborder="0";
+                iframeVideo.setAttribute("allowfullscreen","");
+                if(nameVideo){
+                    iframeVideo.src=nameVideo;
+                }else{
+                    iframeVideo.style.display="none";
+                    divVideo.style.display="none";
+                }
+            divVideo.appendChild(iframeVideo);
+        divCard.appendChild(divVideo);
+            var imgCard= document.createElement("img");
+            imgCard.className="card-img-top";
+            if(namePhoto){
+                imgCard.src="photos/"+namePhoto;
+                imgCard.style.width="100%";
+            }else{
+                imgCard.style.display="none";
+            }
+        divCard.appendChild(imgCard);
+            var audioCard= document.createElement("audio");
+            audioCard.setAttribute("controls","");
+            audioCard.style="margin-top:25px;padding-left:5px;padding-right:5px;width:100%";
+                var audioSource= document.createElement("source");
+                audioSource.type="audio/mpeg";
+                if(nameAudio){
+                    audioSource.src="photos/"+nameAudio;
+                }else{
+                    audioSource.style.display="none";
+                    audioCard.style.display="none";
+                }
+                
+            audioCard.appendChild(audioSource);
+        divCard.appendChild(audioCard);
+            var divBodyText = document.createElement("div");
+                divBodyText.className="card-body";
+                var divBodyTextTitle = document.createElement("h5");
+                divBodyTextTitle.innerHTML=title;
+                divBodyTextTitle.className="card-title";
+            divBodyText.appendChild(divBodyTextTitle);
+                var divBodyTextS = document.createElement("h3");
+                divBodyTextS.className="card-text";
+                divBodyTextS.innerHTML=body;
+            divBodyText.appendChild(divBodyTextS);
+            
+        divCard.appendChild(divBodyText);
+        var elementMessages = document.getElementById("spaceMessages");
+        elementMessages.appendChild(divCard);
+        
+    }
 
     // Assuming json data is wrapped in square brackets as Drew suggests
-    var title=jsonresponse.messageTodayTitle;
-    var body=jsonresponse.messageTodayBody;
-    var namePhoto=jsonresponse.messageTodayPhoto;
-    var nameAudio=jsonresponse.messageAudio;
-    var nameVideo=jsonresponse.messageYoutube;
+   
     var imgMessage = document.getElementById("imgCardMensaje1");
     if(namePhoto){
         imgMessage.src="photos/"+namePhoto;
@@ -118,12 +167,7 @@ loadJSON(function(response) {
     var ytMessage = document.getElementById("youtubeMessage");
 
     var audiotMessage = document.getElementById("audioMess");
-    if(nameVideo){
-        ytMessage.src=nameVideo;
-    }else{
-        ytMessage.style.display="none";
-        document.getElementById("videoDiv").style.display="none";
-    }
+    
     
     if(nameAudio){
         //audiotMessage.src="photos/"+nameAudio;

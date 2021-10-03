@@ -1,32 +1,78 @@
 {
-    "messageTodayTitle": "30 de Septiembre, 2021",
-    "messageTodayBody": "Un amor bonito? Lo tengo contigo.<br>Un amor comprensivo? Lo tengo contigo.<br>Un amor cariñoso? Lo tengo contigo.<br>Un amor sincero? Lo tengo contigo.<br>Que no tengo contigo? Nada. Lo tengo todo. Te amo mucho mi rulosita hermosa.",
-    "messageTodayPhoto":"homer and marge.png",
-    "messageYoutube":"",
-    "messageAudio":"",
-    "message29TodayTitle": "29 de Septiembre, 2021",
-    "message29TodayBody": "Ha sido una semana ajetreada con bastantes cosas que hacer y pendientes, pero siempre encontraré tiempo para mi hermosa bebe. Espero te guste la canción. Te amo a montones amorcito de mi vida. Gracias por todo ese cariño y por llegar a mi vida.",
-    "message29TodayPhoto":"",
-    "message29Youtube":"",
-    "message29Audio":"audioParaBebe.m4a",
-    "message27Title": "27 de Septiembre, 2021",
-    "message27Body": "El tiempo se detiene cuando brilla tu amor! Todo cuanto a mi alrededor desaparece cuando estoy a tu lado, una sensación única e inigualable.<br>Mi amorcito preciosa, que tengas un excelente inicio de semana! Por mi lado, yo estoy recargado gracias a ti ♥",
-    "message27Photo":"viaje3.png",
-    "message27Youtube":"",
-    "message25Title": "24 de Septiembre, 2021",
-    "message25Body": "Y aunque el viaje tuvo sus altos y bajos, hubo muchos momentos bonitos que pasamos juntos. Los momentos difíciles fueron complicados de superar, pero al final creo que nos fortalecieron como pareja. Luego de ese viaje, siento que hemos conectado a otro nivel, un nivel de mayor compresión y de mayor entendimiento uno del otro. Y eso permitió que nuestro amor pueda crecer aún más. Hoy por hoy siento que eres el amor de mi vida y deseo estar a tu lado para siempre, en los buenos y malos momentos. Celebrando contigo o apoyándote si es necesario, pero a tu lado. Contigo iría a donde fuera y cuando sea. ¡Da todo de ti el día de hoy bebe! ¡Eres increíble! Recuérdalo siempre bebe preciosa. ¡Te amo mucho! Ya cuando acabes este último escalón para lograr tu meta, nos daremos otra escapada fuera de Lima ♥ A solearnos en la selva y relajarnos juntitos jaja <br>Att. <br>Tu amorcito.",
-    "message25Photo":"arequpa2.png",
-    "message25Youtube":"",
-    "message24Title": "23 de Septiembre, 2021",
-    "message24Body": "Hoy escogí esta fotito, te preguntarás por qué? Es fácil amor. Sales súper contenta y súper feliz, eso es exactamente lo que deseo para todos tus días y siempre pondré todo de mí para dibujar una sonrisa en tu bella carita. A darlo todo este día bebé! Tú puedes!!!",
-    "message24Photo":"oso p.png",
-    "message24Youtube":"",
-    "message23Title": "22 de Septiembre, 2021",
-    "message23Body": "Un poema para mi tierna bebe, corto pero que dice todo lo que siento por ti:<br><br>Podrá nublarse el sol eternamente<br>Podrá secarse en un instante el mar<br>Podrá romperse el eje de la tierra<br>Como un débil cristal.<br>¡todo sucederá! Podrá la muerte<br>Cubrirme con su fúnebre crespón<br>Pero jamás en mí podrá apagarse<br>La llama de tu amor.<br><br>Bécquer no pudo describir de mejor manera lo que siento por ti, algo eterno e inmenso. Te amo muchísimo amor mío.<br>A seguir dando todo de ti el día de hoy bebé.",
-    "message23Photo":"",
-    "message23Youtube":"https://www.youtube.com/embed/98Akpf1ph2o",
-    "messageYesterdayTitle": "21 de Septiembre, 2021",
-    "messageYesterdayBody": "Si hay algo que nunca dejo de pensar es en nuestros momentos juntos amor y aunque los extraño mucho, también me traen alegría y felicidad... recordar tu hermosa sonrisa motiva todo mi ser. Nunca olvides que eres iniguablable bebe, a darlo todo hoy con tu avance para el sábado amorcito.",
-    "messageYesterdayPhoto":"",
-    "messageYesterdayYoutube":"https://www.youtube.com/embed/_gU9kX7zBxc"
+    "Messages":[
+        {
+            "MessageDate":"3 de Octubre, 2021",
+            "MessageText":"La sonrisa de esta foto describe lo muy feliz que soy a tu lado.<br>Un fin de semana mágico a tu lado mi amor. Cada día y cada experiencia nueva me confirman aún más que eres el amor de mi vida ♥<br> Que brillas y yo brillo a tu lado ♥<br> Eres única bebé y estoy enamorado de absolutamente todo de ti! Un abrazo gigante desde aquí!",
+            "MessagePhoto":"fotoJuntos.png",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate":"30 de Septiembre, 2021",
+            "MessageText":"Un amor bonito? Lo tengo contigo.<br>Un amor comprensivo? Lo tengo contigo.<br>Un amor cariñoso? Lo tengo contigo.<br>Un amor sincero? Lo tengo contigo.<br>Que no tengo contigo? Nada. Lo tengo todo. Te amo mucho mi rulosita hermosa.",
+            "MessagePhoto":"homer and marge.png",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate":"29 de Septiembre, 2021",
+            "MessageText":"Ha sido una semana ajetreada con bastantes cosas que hacer y pendientes, pero siempre encontraré tiempo para mi hermosa bebe. Espero te guste la canción. Te amo a montones amorcito de mi vida. Gracias por todo ese cariño y por llegar a mi vida.",
+            "MessagePhoto":"",
+            "MessageYoutube":"",
+            "MessageAudio":"audioParaBebe.mp3"
+        },
+        {
+            "MessageDate":"27 de Septiembre, 2021",
+            "MessageText":"El tiempo se detiene cuando brilla tu amor! Todo cuanto a mi alrededor desaparece cuando estoy a tu lado, una sensación única e inigualable.<br>Mi amorcito preciosa, que tengas un excelente inicio de semana! Por mi lado, yo estoy recargado gracias a ti ♥",
+            "MessagePhoto":"viaje3.png",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate":"24 de Septiembre, 2021",
+            "MessageText":"Y aunque el viaje tuvo sus altos y bajos, hubo muchos momentos bonitos que pasamos juntos. Los momentos difíciles fueron complicados de superar, pero al final creo que nos fortalecieron como pareja. Luego de ese viaje, siento que hemos conectado a otro nivel, un nivel de mayor compresión y de mayor entendimiento uno del otro. Y eso permitió que nuestro amor pueda crecer aún más. Hoy por hoy siento que eres el amor de mi vida y deseo estar a tu lado para siempre, en los buenos y malos momentos. Celebrando contigo o apoyándote si es necesario, pero a tu lado. Contigo iría a donde fuera y cuando sea. ¡Da todo de ti el día de hoy bebe! ¡Eres increíble! Recuérdalo siempre bebe preciosa. ¡Te amo mucho! Ya cuando acabes este último escalón para lograr tu meta, nos daremos otra escapada fuera de Lima ♥ A solearnos en la selva y relajarnos juntitos jaja <br>Att. <br>Tu amorcito.",
+            "MessagePhoto":"arequpa2.png",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate":"23 de Septiembre, 2021",
+            "MessageText":"Hoy escogí esta fotito, te preguntarás por qué? Es fácil amor. Sales súper contenta y súper feliz, eso es exactamente lo que deseo para todos tus días y siempre pondré todo de mí para dibujar una sonrisa en tu bella carita. A darlo todo este día bebé! Tú puedes!!!",
+            "MessagePhoto":"oso p.png",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate":"22 de Septiembre, 2021",
+            "MessageText":"Un poema para mi tierna bebe, corto pero que dice todo lo que siento por ti:<br><br>Podrá nublarse el sol eternamente<br>Podrá secarse en un instante el mar<br>Podrá romperse el eje de la tierra<br>Como un débil cristal.<br>¡todo sucederá! Podrá la muerte<br>Cubrirme con su fúnebre crespón<br>Pero jamás en mí podrá apagarse<br>La llama de tu amor.<br><br>Bécquer no pudo describir de mejor manera lo que siento por ti, algo eterno e inmenso. Te amo muchísimo amor mío.<br>A seguir dando todo de ti el día de hoy bebé.",
+            "MessagePhoto":"",
+            "MessageYoutube":"https://www.youtube.com/embed/98Akpf1ph2o",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate": "21 de Septiembre, 2021",
+            "MessageText": "Si hay algo que nunca dejo de pensar es en nuestros momentos juntos amor y aunque los extraño mucho, también me traen alegría y felicidad... recordar tu hermosa sonrisa motiva todo mi ser. Nunca olvides que eres iniguablable bebe, a darlo todo hoy con tu avance para el sábado amorcito.",
+            "MessagePhoto":"",
+            "MessageYoutube":"https://www.youtube.com/embed/_gU9kX7zBxc",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate": "20 de Septiembre, 2021",
+            "MessageText": "Siendo día Lunes amorcito, te deseo una espectacular semana! Es una semana donde tienes que poner punche a tus cositas para lograr tu presentación del sábado y yo estoy desde aquí enviandote muchas energías y ánimos.❤ Eres mi todo bebe preciosa a darle con todo!",
+            "MessagePhoto":"",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        },
+        {
+            "MessageDate": "19 de Septiembre, 2021",
+            "MessageText": "Este es el inicio de tal vez un largo y eterno portal para que ingreses a mirar un mensaje personalizado que escoja cada día para ti amorcito, una foto o alguna otra cosa que se me ocurra bebe. Espero realmente sea un espacio que te guste y al que ingreses para relajarte un poco. Te amo mucho bebe preciosa. Hay un boton de whatsapp aquí para que me hables directamente también y se vienen más y más cositas",
+            "MessagePhoto":"",
+            "MessageYoutube":"",
+            "MessageAudio":""
+        }
+    ]
+
+
+
+    
 }
