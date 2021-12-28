@@ -80,6 +80,27 @@ function loadJSON(callback,jsonName) {
     xobj.send(null);
 
 }
+/*
+loadJSON(function(response) {
+    // Do Something with the response e.g.
+    jsonresponse = JSON.parse(response);
+    var paises=jsonresponse.Paises;
+    var keysPaises = Object.keys(paises);
+    
+    for(let i=0;i<keysPaises.length;i++){
+		console.log(paises[keysPaises[i]].id);
+        console.log(keysPaises[i]);				
+    }
+    var childrens=paises[keysPaises[0]].Children;
+    console.log(childrens);
+    childrens.forEach(function(element) {
+        
+        console.log(element);
+     });
+    
+    
+    
+},'ejemploCascadas.json');*/
 
 // Preparing Mensaje
 loadJSON(function(response) {

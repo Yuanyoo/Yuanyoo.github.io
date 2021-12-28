@@ -1,0 +1,45 @@
+
+{
+    "Paises":{
+        
+       
+        "Peru":{
+            "id":"1",
+            "Children":[
+                "Lima",
+                "Arequipa"
+            ]
+        },
+        "Chile":{
+            "id":"2",
+            "Children":[
+                "Santiago"
+            ]
+        }
+        
+    },
+    "Ciudades":{
+        
+       
+        "Lima":{
+            "id":"3",
+            "Children":[
+                "Pueblo Libre",
+                "Miraflores"
+            ]
+        },
+        "Santiago":{
+            "id":"4",
+            "Children":[
+                "Test1",
+                "Test2"
+            ]
+        }
+    },
+    "Distritos":{
+        "Pueblo Libre":{
+            "id":"5",
+            "Children":[]
+        }
+    }
+}
